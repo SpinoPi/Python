@@ -79,6 +79,8 @@ def compareTo(dA,dB):
                 diA[i] = diB
     return pd.DataFrame(diA,index=['Tag','Parament','Previous','New']).T
 
+print('INSTRUCTION\nType "f" to get the paraments filted list.\nType "w" to get the sorted file from tunningdata.\nType "q" to quit.')
+print('=====================================')
 sA = input('The previous Tunningdata file :')
 if (sA == 'f' or sA == 'F'):
     print('These paraments had been filted:')
@@ -93,12 +95,14 @@ elif (sA == 'w' or sA =='W'):
     print('Print any key to quit.')
     input()
     quit()
+elif (sA == 'q' or sA == 'Q'):
+    quit()
 sB = input('The new Tunningdata file:')
 dA = pd.read_table(sA,skiprows=[0,1],header=None)
 dB = pd.read_table(sB,skiprows=[0,1],header=None)
 dC = compareTo(Tunningdata(dA,lType),Tunningdata(dB,lType))
 sC = sA.strip('.txt') + '_' + sB.strip('.txt') + '.csv'
 dC.to_csv(sC)
-print('The result had been saved into' + sC)
+print('The result had been saved into ' + sC)
 print('Print any key to quit.')
 input()
