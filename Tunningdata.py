@@ -1,6 +1,7 @@
 # coding: utf-8
 # Code by SpinoPi
 # Version:0.9
+# This python program is aimming to compare two tunningdata file of YOKOGAWA
 
 import pandas as pd
 lType = ['AV01', 'AV02', 'AV03', 'AV04', 'AV05', 'AV06', 'AV07', 'AV08', 'AV09',
