@@ -106,7 +106,7 @@ def compareTo(dA,dB):
         diA[i] = diB
     return pd.DataFrame(diA,index=['Tag','Parament',dA.name,dB.name]).T
 
-print('INSTRUCTION\nType "f" to get the paraments filted list.\nType "w" to get the sorted file from tunningdata.\nType "q" to quit.')
+print('INSTRUCTION Version 0.11\nType "f" to get the paraments filted list.\nType "w" to get the sorted file from tunningdata.\nType "q" to quit.')
 print('=====================================')
 sA = input('The previous Tunningdata file :').strip('.txt')
 if (sA == 'f' or sA == 'F'):
@@ -118,8 +118,8 @@ elif (sA == 'w' or sA =='W'):
     dC = pd.read_table(sC + '.txt',skiprows=[0,1],header=None)
     dD = Tunningdata(dC,lType)
     dD.to_csv(sC.strip('.txt') + '.csv')
-    print('The result had been saved into' + sC.strip('.txt') + '.csv')
-    print('Print any key to quit.')
+    print('The result had been saved into ' + sC.strip('.txt') + '.csv')
+    print('Enter any key to quit.')
     input()
     quit()
 elif (sA == 'q' or sA == 'Q'):
@@ -135,5 +135,5 @@ dE = compareTo(dC,dD)
 sC = sA + '_' + sB + '.csv'
 dE.to_csv(sC)
 print('The result had been saved into ' + sC)
-print('Print any key to quit.')
+print('Enter any key to quit.')
 input()
