@@ -1,6 +1,6 @@
 # coding: utf-8
 # Code by SpinoPi
-# Version:0.10
+# Version:0.11
 # This python program is aimming to compare two tunningdata file of YOKOGAWA
 
 import pandas as pd
@@ -90,6 +90,20 @@ def compareTo(dA,dB):
                 diB[dA.name] = dA.ix[n][m]
                 diB[dB.name] = dB.ix[n][m]
                 diA[i] = diB
+    for n in set(dB.index).difference(set(dA.index)):
+        i = len(diA)
+        diB = {}
+        diB['Tag'] = n
+        diB['Parament'] = 'Block Change'
+        diB[dB.name] = 'New'
+        diA[i] = diB
+    for n in set(dA.index).difference(set(dB.index)):
+        i = len(diA)
+        diB = {}
+        diB['Tag'] = n
+        diB['Parament'] = 'Block Change'
+        diB[dB.name] = 'Deleted'
+        diA[i] = diB
     return pd.DataFrame(diA,index=['Tag','Parament',dA.name,dB.name]).T
 
 print('INSTRUCTION\nType "f" to get the paraments filted list.\nType "w" to get the sorted file from tunningdata.\nType "q" to quit.')
