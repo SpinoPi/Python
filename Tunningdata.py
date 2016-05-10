@@ -106,12 +106,13 @@ def compareTo(dA,dB):
         diA[i] = diB
     return pd.DataFrame(diA,index=['Tag','Parament',dA.name,dB.name]).T
 
-print('INSTRUCTION Version 0.11\nType "f" to get the paraments filted list.\nType "w" to get the sorted file from tunningdata.\nType "q" to quit.')
+print('INSTRUCTION Code by SpinoPi Version 0.11 \nType "F" to get the paraments filted list.\nType "W" to get the sorted file from tunningdata.\nType "Q" to quit.')
 print('=====================================')
 sA = input('The previous Tunningdata file :').strip('.txt')
 if (sA == 'f' or sA == 'F'):
     print('These paraments had been filted:')
-    print(lType.sort())
+    lType.sort()
+    print(lType)
     sA = input('The previous Tunningdata file :').strip('.txt')
 elif (sA == 'w' or sA =='W'):
     sC = input('The Tunningdata file :').strip('.txt')
