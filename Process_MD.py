@@ -5,7 +5,7 @@
 """
 The traget of this file is to study the Process MD platform based on Partial Least Squares (PLS).
 
-Modified at  2017.10.Aug
+Modified at 2017.10.Aug
 
 """
 
